@@ -1,0 +1,2391 @@
+{
+  "version": "1.0",
+  "source": ["纪年科技维修手册", "Apple Developer Documentation", "Apple TN2151", "WWDC 2018/414"],
+  "lastUpdated": "2026-07-04",
+  "totalEntries": 107,
+  "categories": [
+    {
+      "id": "aop",
+      "name": "AOP音频协处理器",
+      "nameEn": "Audio Co-Processor",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["AOP panic K2-bosch control", "AOP panic K2-Bosch control"],
+            "regex": "AOP panic.*[Kk]2.*[Bb]osch.*[Cc]ontrol"
+          },
+          "faultInfo": {
+            "title": "振动器故障",
+            "severity": "warning",
+            "description": "AOP音频协处理器检测到振动器（Bosch控制器）异常，可能导致设备重启。",
+            "affectedComponents": [
+              {"name": "振动器排线", "probability": 0.6},
+              {"name": "振动器马达", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检查振动器排线是否松动或损坏",
+              "更换振动器排线测试",
+              "如排线正常，更换振动器马达"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP panic systickwatchdog", "systickwatchdog2 not pet"],
+            "regex": "AOP panic.*systickwatchdog"
+          },
+          "faultInfo": {
+            "title": "大音频/陀螺仪异常",
+            "severity": "warning",
+            "description": "AOP协处理器看门狗超时，通常与大音频模块或陀螺仪通讯异常有关。",
+            "affectedComponents": [
+              {"name": "音频模块", "probability": 0.5},
+              {"name": "陀螺仪排线", "probability": 0.3},
+              {"name": "陀螺仪焊接", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "排查音频模块连接与焊接",
+              "检查陀螺仪排线与焊接状态",
+              "更换大音频IC或陀螺仪模块"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP panic AMCC ERROR"],
+            "regex": "AOP panic.*AMCC.*ERROR"
+          },
+          "faultInfo": {
+            "title": "前置环境光感/距离感应器故障",
+            "severity": "warning",
+            "description": "AOP检测到前置环境光传感器或距离感应器通讯异常。",
+            "affectedComponents": [
+              {"name": "前置感光排线", "probability": 0.7},
+              {"name": "距离感应器", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换前置感光排线",
+              "清洁感应区域",
+              "检测距离感应器功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP panic PressureController.cpp"],
+            "regex": "AOP panic.*[Pp]ressure[Cc]ontroller\\.cpp"
+          },
+          "faultInfo": {
+            "title": "距离感应/后置相机/指纹模块故障",
+            "severity": "critical",
+            "description": "AOP压力控制器异常，涉及距离感应、后置摄像头或指纹模块，可能伴随主板分层故障。",
+            "affectedComponents": [
+              {"name": "前置感应排线", "probability": 0.3},
+              {"name": "后置摄像头排线", "probability": 0.3},
+              {"name": "指纹排线", "probability": 0.2},
+              {"name": "主板板层", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "检查前置感应排线",
+              "检查后置摄像头与指纹排线",
+              "如外配正常，检测主板分层与板层焊接"
+            ],
+            "priority": "建议先排查外部配件，如无效再专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC pressure queue blocked"],
+            "regex": "AOP PANIC.*pressure queue blocked"
+          },
+          "faultInfo": {
+            "title": "指南针/陀螺仪/主板板层问题",
+            "severity": "critical",
+            "description": "AOP压力队列阻塞，通常与指南针、陀螺仪或主板板层问题相关。",
+            "affectedComponents": [
+              {"name": "指南针模块", "probability": 0.3},
+              {"name": "陀螺仪模块", "probability": 0.3},
+              {"name": "主板板层", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检测指南针功能",
+              "排查主板板层焊接",
+              "更换陀螺仪模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC prox"],
+            "regex": "AOP PANIC.*prox"
+          },
+          "faultInfo": {
+            "title": "距离感应故障",
+            "severity": "warning",
+            "description": "AOP检测到距离感应器异常。",
+            "affectedComponents": [
+              {"name": "距离感应器", "probability": 0.8}
+            ],
+            "troubleshootingSteps": [
+              "校准距离感应器",
+              "更换距离感应器"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC moly"],
+            "regex": "AOP PANIC.*moly"
+          },
+          "faultInfo": {
+            "title": "指南针/WiFi排线问题",
+            "severity": "warning",
+            "description": "AOP moly模块异常，影响指南针功能或WiFi排线。",
+            "affectedComponents": [
+              {"name": "指南针模块", "probability": 0.4},
+              {"name": "WiFi排线", "probability": 0.6}
+            ],
+            "troubleshootingSteps": [
+              "检测指南针功能",
+              "更换WiFi排线"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC SCMto:3-pearl"],
+            "regex": "AOP PANIC.*SCMto.*pearl"
+          },
+          "faultInfo": {
+            "title": "面容/听筒排线故障",
+            "severity": "warning",
+            "description": "AOP pearl模块异常，涉及面容识别组件或听筒排线。",
+            "affectedComponents": [
+              {"name": "面容组件排线", "probability": 0.5},
+              {"name": "听筒排线", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "重新插拔面容组件",
+              "检查听筒排线连接",
+              "更换面容组件或听筒排线"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP DATA ABORT"],
+            "regex": "AOP DATA ABORT"
+          },
+          "faultInfo": {
+            "title": "系统/硬盘/CPU与硬盘通讯问题",
+            "severity": "critical",
+            "description": "AOP数据异常终止，通常涉及系统、硬盘或CPU与硬盘之间的通讯故障。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.4},
+              {"name": "CPU与硬盘通讯电路", "probability": 0.4},
+              {"name": "系统固件", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "尝试刷机恢复系统",
+              "检测硬盘与CPU通讯电路",
+              "如刷机无效，更换硬盘"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP data.link CMD timeout"],
+            "regex": "AOP data\\.link.*CMD timeout"
+          },
+          "faultInfo": {
+            "title": "CPU问题",
+            "severity": "critical",
+            "description": "AOP数据链路命令超时，指向CPU供电或虚焊问题。",
+            "affectedComponents": [
+              {"name": "CPU供电电路", "probability": 0.5},
+              {"name": "CPU虚焊", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "排查CPU供电电路",
+              "检测CPU虚焊",
+              "必要时重植CPU"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PREFETCH ABORT"],
+            "regex": "AOP PREFETCH ABORT"
+          },
+          "faultInfo": {
+            "title": "尾插/开机排线故障",
+            "severity": "warning",
+            "description": "AOP预取异常终止，常见于尾插或开机排线故障。（iPhone 16系列适配）",
+            "affectedComponents": [
+              {"name": "尾插排线", "probability": 0.6},
+              {"name": "开机排线", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插排线",
+              "更换开机排线",
+              "检测连接状态"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP NMI POWER"],
+            "regex": "AOP NMI POWER"
+          },
+          "faultInfo": {
+            "title": "前置摄像头/开机键排线故障",
+            "severity": "warning",
+            "description": "AOP不可屏蔽中断电源异常，涉及前置摄像头或开机键排线。",
+            "affectedComponents": [
+              {"name": "前置摄像头排线", "probability": 0.5},
+              {"name": "开机键排线", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换前置摄像头排线",
+              "更换开机键排线"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP Unknown exception pc"],
+            "regex": "AOP Unknown exception"
+          },
+          "faultInfo": {
+            "title": "系统/应用异常",
+            "severity": "info",
+            "description": "AOP未知异常，可能是系统或第三方应用冲突导致。",
+            "affectedComponents": [
+              {"name": "系统固件", "probability": 0.5},
+              {"name": "第三方应用", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更新系统至最新版本",
+              "排查第三方应用冲突",
+              "备份数据后恢复出厂设置"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["RTBUDDY(AOP)SetmanagedGated"],
+            "regex": "RTBUDDY.*AOP.*[Ss]etmanaged[Gg]ated"
+          },
+          "faultInfo": {
+            "title": "电池座故障",
+            "severity": "warning",
+            "description": "AOP RTBuddy电池管理异常，指向电池座连接问题。",
+            "affectedComponents": [
+              {"name": "电池座", "probability": 0.8}
+            ],
+            "troubleshootingSteps": [
+              "更换电池座",
+              "检测电池连接稳定性"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["NO ENTRY TO DELETE"],
+            "regex": "NO ENTRY TO DELETE"
+          },
+          "faultInfo": {
+            "title": "CPU暂存故障（12 Pro上盖）",
+            "severity": "critical",
+            "description": "CPU暂存模块异常，常见于iPhone 12 Pro系列上盖问题。",
+            "affectedComponents": [
+              {"name": "CPU上盖", "probability": 0.7},
+              {"name": "暂存模块", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "专业维修CPU上盖",
+              "检测暂存模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC DRAM wdog dc>50%"],
+            "regex": "AOP PANIC.*DRAM wdog"
+          },
+          "faultInfo": {
+            "title": "听筒排线故障",
+            "severity": "warning",
+            "description": "AOP检测到DRAM看门狗超时率超过50%，指向听筒排线问题。",
+            "affectedComponents": [
+              {"name": "听筒排线", "probability": 0.8}
+            ],
+            "troubleshootingSteps": [
+              "更换听筒排线",
+              "检测连接"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AOP PANIC - Iplus", "AOP PANIC Iplus", "Iplus main"],
+            "regex": "AOP PANIC.*[Ii]plus|Iplus main"
+          },
+          "faultInfo": {
+            "title": "指南针/陀螺仪模块故障（Iplus）",
+            "severity": "critical",
+            "description": "AOP Iplus模块异常，直接影响指南针和陀螺仪功能。常见于iPhone 16系列及较新机型，通常由陀螺仪模块损坏或主板板层通讯异常引起。",
+            "affectedComponents": [
+              {"name": "陀螺仪模块", "probability": 0.45},
+              {"name": "指南针模块", "probability": 0.35},
+              {"name": "主板板层", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "检测指南针功能（打开地图APP验证方向是否准确）",
+              "检测陀螺仪功能（打开水平仪/测距仪APP验证）",
+              "检查陀螺仪模块排线连接与焊接状态",
+              "如外配正常，排查主板板层通讯线路",
+              "更换陀螺仪模块或进行主板级维修"
+            ],
+            "priority": "建议先排查外部配件，如无效再专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "smc",
+      "name": "SMC系统管理控制器",
+      "nameEn": "System Management Controller",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["SMC PANIC ASSERTION"],
+            "regex": "SMC PANIC ASSERTION"
+          },
+          "faultInfo": {
+            "title": "尾插/CPU上层板/CPU供电电感异常",
+            "severity": "critical",
+            "description": "SMC断言异常，涉及尾插、CPU上层板或CPU供电电感。",
+            "affectedComponents": [
+              {"name": "尾插", "probability": 0.3},
+              {"name": "CPU上层板", "probability": 0.3},
+              {"name": "CPU供电电感", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插",
+              "检测CPU供电与板层焊接"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SMC PANIC ASSERTION", "后缀Misc(2)"],
+            "regex": "SMC PANIC.*ASSERTION.*Misc"
+          },
+          "faultInfo": {
+            "title": "尾插/麦克风/前置泛光/气压传感器故障",
+            "severity": "warning",
+            "description": "SMC断言异常（Misc后缀），涉及尾插、麦克风、前置泛光或气压传感器。",
+            "affectedComponents": [
+              {"name": "尾插排线", "probability": 0.25},
+              {"name": "麦克风", "probability": 0.25},
+              {"name": "前置泛光", "probability": 0.25},
+              {"name": "气压传感器", "probability": 0.25}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插排线",
+              "检测泛光与气压传感器"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SMC DATA ABORT"],
+            "regex": "SMC DATA ABORT"
+          },
+          "faultInfo": {
+            "title": "CPU通讯异常/板层断线/CPU故障",
+            "severity": "critical",
+            "description": "SMC数据异常终止，涉及CPU通讯、板层断线或CPU本身故障。",
+            "affectedComponents": [
+              {"name": "CPU通讯电路", "probability": 0.3},
+              {"name": "主板板层", "probability": 0.3},
+              {"name": "CPU", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检测CPU通讯电路",
+              "排查主板板层断线"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SMC i2cm0"],
+            "regex": "SMC i2cm0"
+          },
+          "faultInfo": {
+            "title": "U3100/U3300/U3400/U6200/J3200芯片问题（A11-A12系列）",
+            "severity": "critical",
+            "description": "SMC I2C总线0异常，常见于A11-A12系列，涉及多个芯片。",
+            "affectedComponents": [
+              {"name": "U3100芯片", "probability": 0.2},
+              {"name": "U3300芯片", "probability": 0.2},
+              {"name": "U3400芯片", "probability": 0.2},
+              {"name": "U6200芯片", "probability": 0.2},
+              {"name": "J3200芯片", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "专业维修更换对应芯片"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SMC i2cm1", "A11系列"],
+            "regex": "SMC i2cm1.*A11"
+          },
+          "faultInfo": {
+            "title": "USB芯片故障（A11系列）",
+            "severity": "critical",
+            "description": "SMC I2C总线1异常，A11系列专属，USB芯片故障。",
+            "affectedComponents": [
+              {"name": "USB芯片", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "更换USB芯片",
+              "检测充电功能"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SMC i2cm1", "A12系列"],
+            "regex": "SMC i2cm1.*A12"
+          },
+          "faultInfo": {
+            "title": "USB芯片/主电源问题（A12系列）",
+            "severity": "critical",
+            "description": "SMC I2C总线1异常，A12系列专属，涉及USB芯片或主电源。",
+            "affectedComponents": [
+              {"name": "USB芯片", "probability": 0.5},
+              {"name": "主电源", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换USB芯片",
+              "检测主电源电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0xA1", "0x41"],
+            "regex": "0xA1|0x41"
+          },
+          "faultInfo": {
+            "title": "电池检测数据异常",
+            "severity": "warning",
+            "description": "SMC检测到电池数据异常（0xA1/0x41错误码）。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装电池",
+              "校准电池数据"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["port enable failed"],
+            "regex": "port enable failed"
+          },
+          "faultInfo": {
+            "title": "中层虚焊/WiFi供电/硬盘虚焊（iPhone 16系列专属）",
+            "severity": "critical",
+            "description": "端口启用失败，iPhone 16系列专属，涉及中层虚焊、WiFi供电或硬盘虚焊。",
+            "affectedComponents": [
+              {"name": "主板中层", "probability": 0.4},
+              {"name": "WiFi供电", "probability": 0.3},
+              {"name": "硬盘虚焊", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "专业维修主板中层",
+              "检测WiFi供电与硬盘连接"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x1000"],
+            "regex": "0x1000"
+          },
+          "faultInfo": {
+            "title": "感光排线故障（13系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x1000，iPhone 13系列专属，感光排线故障。",
+            "affectedComponents": [
+              {"name": "前置感光排线", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换前置感光排线",
+              "检测感应功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x4000"],
+            "regex": "0x4000"
+          },
+          "faultInfo": {
+            "title": "电池数据异常（13系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x4000，iPhone 13系列专属，电池数据异常。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装电池",
+              "校准电池数据"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x8000"],
+            "regex": "0x8000"
+          },
+          "faultInfo": {
+            "title": "尾插/气压计故障（13系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x8000，iPhone 13系列专属。",
+            "affectedComponents": [
+              {"name": "尾插排线", "probability": 0.5},
+              {"name": "气压计", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插排线",
+              "检测气压计功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x10000"],
+            "regex": "0x10000"
+          },
+          "faultInfo": {
+            "title": "感光排线/音量键排线故障（13/14系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x10000，13系感光排线或14系音量键排线。",
+            "affectedComponents": [
+              {"name": "前置感光排线", "probability": 0.5},
+              {"name": "音量键排线", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换对应排线",
+              "检测连接"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x14000"],
+            "regex": "0x14000"
+          },
+          "faultInfo": {
+            "title": "无线充/开机排线/气压计故障",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x14000。",
+            "affectedComponents": [
+              {"name": "无线充电排线", "probability": 0.4},
+              {"name": "开机排线", "probability": 0.3},
+              {"name": "气压计", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换无线充/开机排线",
+              "检测气压计"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x20000"],
+            "regex": "0x20000"
+          },
+          "faultInfo": {
+            "title": "重力感应/感光/环境光排线故障（14/15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x20000，14系重力感应或15系感光/环境光。",
+            "affectedComponents": [
+              {"name": "重力感应排线", "probability": 0.4},
+              {"name": "感光排线", "probability": 0.3},
+              {"name": "环境光排线", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换对应排线",
+              "检测感应功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x28000"],
+            "regex": "0x28000"
+          },
+          "faultInfo": {
+            "title": "无线充排线故障（15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x28000，iPhone 15系列专属。",
+            "affectedComponents": [
+              {"name": "无线充电排线", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换无线充排线",
+              "检测充电功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x30000"],
+            "regex": "0x30000"
+          },
+          "faultInfo": {
+            "title": "后盖玻璃故障（15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x30000，iPhone 15系列专属，后盖玻璃故障。",
+            "affectedComponents": [
+              {"name": "后盖玻璃", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装后盖玻璃",
+              "检测贴合度"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x40000"],
+            "regex": "0x40000"
+          },
+          "faultInfo": {
+            "title": "电池数据/感光排线/主板分层（13/14/15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x40000，多机型共享。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.3},
+              {"name": "前置感光排线", "probability": 0.3},
+              {"name": "主板分层", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换对应排线/电池",
+              "重新贴合主板分层"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x50000"],
+            "regex": "0x50000"
+          },
+          "faultInfo": {
+            "title": "震动器/气压计故障",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x50000。",
+            "affectedComponents": [
+              {"name": "震动器", "probability": 0.5},
+              {"name": "气压计", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换震动器",
+              "检测气压计功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x60000"],
+            "regex": "0x60000"
+          },
+          "faultInfo": {
+            "title": "指南针故障（15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x60000，iPhone 15系列专属。",
+            "affectedComponents": [
+              {"name": "指南针模块", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "检测指南针功能",
+              "更换相关模块"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x70000"],
+            "regex": "0x70000"
+          },
+          "faultInfo": {
+            "title": "后盖玻璃故障（15Pro系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x70000，iPhone 15 Pro系列专属。",
+            "affectedComponents": [
+              {"name": "后盖玻璃", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装后盖玻璃",
+              "检测贴合度"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0x80000"],
+            "regex": "0x80000"
+          },
+          "faultInfo": {
+            "title": "气压计/尾插/感光排线故障（13/14/15系列）",
+            "severity": "warning",
+            "description": "SMC十六进制错误码0x80000，多机型共享。",
+            "affectedComponents": [
+              {"name": "气压计", "probability": 0.3},
+              {"name": "尾插", "probability": 0.3},
+              {"name": "感光排线", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换对应排线",
+              "检测功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["d17", "d27", "d28", "d37", "d63", "d64", "d73", "d74"],
+            "regex": "d1[47]|d2[78]|d3[47]|d6[34]|d7[34]"
+          },
+          "faultInfo": {
+            "title": "中层虚焊/掉点/排线故障（SMC d系列代码）",
+            "severity": "critical",
+            "description": "SMC d系列错误码，指向中层虚焊、掉点或各类排线故障。",
+            "affectedComponents": [
+              {"name": "主板中层", "probability": 0.3},
+              {"name": "泛光排线", "probability": 0.15},
+              {"name": "闪光灯排线", "probability": 0.15},
+              {"name": "前置排线", "probability": 0.15},
+              {"name": "电池", "probability": 0.15},
+              {"name": "无线充排线", "probability": 0.1}
+            ],
+            "troubleshootingSteps": [
+              "d17/d63/d64: 专业维修主板中层，重新焊接",
+              "d27: 更换泛光/闪光灯排线",
+              "d28: 更换闪光灯排线",
+              "d37: 更换前置排线",
+              "d73: 更换原装电池，校准数据",
+              "d74: 更换无线充排线或维修中层"
+            ],
+            "priority": "建议先排查外部配件，如无效再专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "硬盘存储",
+      "nameEn": "Storage / NAND",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["NVME"],
+            "regex": "NVME"
+          },
+          "faultInfo": {
+            "title": "硬盘故障",
+            "severity": "critical",
+            "description": "NVMe存储控制器异常，硬盘本身故障。",
+            "affectedComponents": [
+              {"name": "硬盘芯片", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "尝试恢复系统",
+              "无效则更换硬盘芯片"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["ANS2", "ANS"],
+            "regex": "ANS2|ANS"
+          },
+          "faultInfo": {
+            "title": "硬盘电路/板层/PCB板层断线",
+            "severity": "critical",
+            "description": "硬盘ANS总线异常，涉及硬盘电路或主板板层断线。",
+            "affectedComponents": [
+              {"name": "硬盘电路", "probability": 0.4},
+              {"name": "主板板层", "probability": 0.3},
+              {"name": "PCB板层断线", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘供电电路",
+              "排查板层断线"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Anc-postnand.c1260 assert failed link cmd time out"],
+            "regex": "Anc-postnand.*assert failed.*cmd time out"
+          },
+          "faultInfo": {
+            "title": "硬盘或CPU问题",
+            "severity": "critical",
+            "description": "NAND闪存断言失败，命令超时，涉及硬盘或CPU通讯。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.5},
+              {"name": "CPU", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘健康度",
+              "排查CPU与硬盘通讯"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["assert failed link", "glonasser failed link"],
+            "regex": "assert failed link|glonasser failed link"
+          },
+          "faultInfo": {
+            "title": "硬盘故障",
+            "severity": "critical",
+            "description": "NAND闪存链路断言失败。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "更换硬盘",
+              "检测硬盘供电"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Memorystatus jetsam thread"],
+            "regex": "Memorystatus.*jetsam"
+          },
+          "faultInfo": {
+            "title": "内存压力/硬盘故障",
+            "severity": "warning",
+            "description": "系统内存压力事件（Jetsam），可能导致进程被终止或重启。",
+            "affectedComponents": [
+              {"name": "内存", "probability": 0.4},
+              {"name": "硬盘", "probability": 0.3},
+              {"name": "系统资源", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘读写速度",
+              "清理后台应用",
+              "必要时更换硬盘"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["mbuf watchdog", "waiters suck"],
+            "regex": "mbuf watchdog"
+          },
+          "faultInfo": {
+            "title": "硬盘故障",
+            "severity": "critical",
+            "description": "网络缓冲区看门狗超时，通常与硬盘故障相关。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘坏道",
+              "备份数据后更换硬盘"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Rtunref Bad refcnt"],
+            "regex": "Rtunref.*Bad refcnt"
+          },
+          "faultInfo": {
+            "title": "硬盘故障",
+            "severity": "critical",
+            "description": "运行时引用计数异常，指向硬盘故障。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘健康度",
+              "必要时更换硬盘"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["eMemory", "eMemory:pcie"],
+            "regex": "eMemory"
+          },
+          "faultInfo": {
+            "title": "硬盘/硬盘与CPU通讯异常",
+            "severity": "critical",
+            "description": "内存/存储异常，涉及硬盘本身或与CPU的PCIe通讯。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.5},
+              {"name": "CPU与硬盘通讯", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "排查硬盘供电与通讯电路",
+              "更换硬盘"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Fatal coherency point ERROR", "freed zone element has been modified"],
+            "regex": "Fatal coherency point|freed zone element"
+          },
+          "faultInfo": {
+            "title": "CPU虚焊/硬盘损坏",
+            "severity": "critical",
+            "description": "内存一致性错误或空闲区域元素被修改，涉及CPU虚焊或硬盘损坏。",
+            "affectedComponents": [
+              {"name": "CPU虚焊", "probability": 0.5},
+              {"name": "硬盘损坏", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU",
+              "检测硬盘是否损坏"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Invalid queue element linkage"],
+            "regex": "Invalid queue element linkage"
+          },
+          "faultInfo": {
+            "title": "硬盘虚焊/损坏/NAND闪存故障",
+            "severity": "critical",
+            "description": "队列元素链接无效，涉及硬盘虚焊、损坏或NAND闪存故障。",
+            "affectedComponents": [
+              {"name": "硬盘虚焊", "probability": 0.3},
+              {"name": "硬盘损坏", "probability": 0.3},
+              {"name": "NAND闪存", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "重植硬盘",
+              "检测NAND闪存模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["WKDMD ERROR code 0x2"],
+            "regex": "WKDMD ERROR.*0x2"
+          },
+          "faultInfo": {
+            "title": "刷机报错14（硬盘故障）",
+            "severity": "critical",
+            "description": "WKDMD错误码0x2，刷机时报错误14，确认硬盘故障。",
+            "affectedComponents": [
+              {"name": "硬盘芯片", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换硬盘芯片",
+              "重新刷机验证"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["LLC Bus error from cpu0", "LLC Bus error from cpu3"],
+            "regex": "LLC Bus error from cpu"
+          },
+          "faultInfo": {
+            "title": "CPU与WiFi模块通讯异常/主板板层断线",
+            "severity": "critical",
+            "description": "LLC总线错误，涉及CPU与WiFi模块通讯或主板板层断线。（iPhone 16系列专属）",
+            "affectedComponents": [
+              {"name": "CPU与WiFi通讯", "probability": 0.3},
+              {"name": "主板板层", "probability": 0.3},
+              {"name": "WiFi模块", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检测主板板层",
+              "重植CPU或更换WiFi模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DPC err"],
+            "regex": "DPC err"
+          },
+          "faultInfo": {
+            "title": "硬盘/基带电路/晶振故障",
+            "severity": "critical",
+            "description": "DPC（Display Controller / Data Path Controller）错误，涉及硬盘、基带电路或晶振异常。",
+            "affectedComponents": [
+              {"name": "硬盘", "probability": 0.4},
+              {"name": "基带电路", "probability": 0.3},
+              {"name": "晶振", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "检测硬盘健康度",
+              "排查基带电路",
+              "检测晶振频率"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseband",
+      "name": "基带与通讯",
+      "nameEn": "Baseband & Communication",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["baseband"],
+            "regex": "baseband"
+          },
+          "faultInfo": {
+            "title": "基带部分故障",
+            "severity": "critical",
+            "description": "基带处理器异常，影响蜂窝网络、通话等功能。",
+            "affectedComponents": [
+              {"name": "基带芯片", "probability": 0.6},
+              {"name": "SIM卡槽", "probability": 0.2},
+              {"name": "基带电路", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "检测SIM卡与基带芯片",
+              "专业维修基带电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Baseband radio consequence failed"],
+            "regex": "Baseband radio consequence failed"
+          },
+          "faultInfo": {
+            "title": "基带故障/WiFi蓝牙异常",
+            "severity": "critical",
+            "description": "基带无线电链路失败，影响基带、WiFi和蓝牙功能。",
+            "affectedComponents": [
+              {"name": "基带芯片", "probability": 0.5},
+              {"name": "WiFi模块", "probability": 0.3},
+              {"name": "蓝牙模块", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "排查基带芯片",
+              "检测WiFi/蓝牙模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["apcie"],
+            "regex": "apcie"
+          },
+          "faultInfo": {
+            "title": "基带/基带码片/CPU/硬盘/WiFi蓝牙故障",
+            "severity": "critical",
+            "description": "PCIe总线异常，涉及基带、WiFi或蓝牙模块。",
+            "affectedComponents": [
+              {"name": "基带码片", "probability": 0.2},
+              {"name": "CPU虚焊", "probability": 0.2},
+              {"name": "硬盘", "probability": 0.2},
+              {"name": "WiFi模块", "probability": 0.2},
+              {"name": "蓝牙模块", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "专业维修基带码片与电路",
+              "重植CPU",
+              "检测硬盘健康度",
+              "更换WiFi模块"
+            ],
+            "priority": "建议先排查外部配件，如无效再专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SOCN1"],
+            "regex": "SOCN1"
+          },
+          "faultInfo": {
+            "title": "基带/通讯模块故障（iPhone 16系列专属）",
+            "severity": "critical",
+            "description": "SOCN1错误，iPhone 16系列专属，基带或通讯模块故障。",
+            "affectedComponents": [
+              {"name": "基带芯片", "probability": 0.5},
+              {"name": "通讯模块", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "检测基带芯片",
+              "专业维修通讯电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AppleBCMWALN", "boseband", "baseband radio on sequence failed"],
+            "regex": "AppleBCMWALN|boseband|baseband radio on sequence"
+          },
+          "faultInfo": {
+            "title": "WiFi/蓝牙/基带故障",
+            "severity": "critical",
+            "description": "WiFi/蓝牙或基带模块异常，可能涉及BCMWLAN芯片、基带芯片或相关电路。",
+            "affectedComponents": [
+              {"name": "WiFi模块", "probability": 0.3},
+              {"name": "蓝牙模块", "probability": 0.2},
+              {"name": "基带芯片", "probability": 0.3},
+              {"name": "基带电路", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "更换WiFi模块",
+              "检测蓝牙功能",
+              "排查基带芯片与电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "name": "屏幕与显示",
+      "nameEn": "Display & Screen",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["TT1P", "TT2P"],
+            "regex": "TT1P|TT2P"
+          },
+          "faultInfo": {
+            "title": "屏幕故障",
+            "severity": "warning",
+            "description": "显示触摸控制器异常，屏幕故障。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.7},
+              {"name": "显示排线", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换原装屏幕",
+              "检测显示排线"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TGOV TTSA"],
+            "regex": "TGOV TTSA"
+          },
+          "faultInfo": {
+            "title": "尾插故障",
+            "severity": "warning",
+            "description": "显示供电异常，实际指向尾插故障。",
+            "affectedComponents": [
+              {"name": "尾插排线", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插排线",
+              "检测充电与数据传输"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TGOB"],
+            "regex": "TGOB"
+          },
+          "faultInfo": {
+            "title": "电池故障",
+            "severity": "warning",
+            "description": "显示供电电池异常。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装电池",
+              "校准电池数据"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Th0a Th0x"],
+            "regex": "Th0a.*Th0x|Th0x"
+          },
+          "faultInfo": {
+            "title": "CPU问题/板层问题",
+            "severity": "critical",
+            "description": "显示热管理异常，指向CPU或主板板层问题。",
+            "affectedComponents": [
+              {"name": "CPU", "probability": 0.5},
+              {"name": "主板板层", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "排查CPU虚焊",
+              "检测主板板层"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TP3R"],
+            "regex": "TP3R"
+          },
+          "faultInfo": {
+            "title": "屏幕到CPU开路",
+            "severity": "critical",
+            "description": "显示信号到CPU的通讯线路开路。",
+            "affectedComponents": [
+              {"name": "屏幕与CPU通讯排线", "probability": 0.6},
+              {"name": "主板板层", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检测屏幕与CPU的通讯排线",
+              "修复开路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TP1A"],
+            "regex": "TP1A"
+          },
+          "faultInfo": {
+            "title": "电池故障",
+            "severity": "warning",
+            "description": "显示供电电池检测异常。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装电池",
+              "校准电池数据"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TP2A", "TP3R", "TP4H"],
+            "regex": "TP2A|TP3R|TP4H"
+          },
+          "faultInfo": {
+            "title": "电池/屏幕问题",
+            "severity": "warning",
+            "description": "显示供电与屏幕通讯异常。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.5},
+              {"name": "屏幕", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换电池与屏幕",
+              "检测连接"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["TP2C"],
+            "regex": "TP2C"
+          },
+          "faultInfo": {
+            "title": "屏幕/电池故障",
+            "severity": "warning",
+            "description": "显示供电与屏幕通讯异常。",
+            "affectedComponents": [
+              {"name": "屏幕", "probability": 0.5},
+              {"name": "电池", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换屏幕与电池",
+              "检测供电"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC-apt firmware"],
+            "regex": "DCP PANIC.*apt firmware"
+          },
+          "faultInfo": {
+            "title": "屏幕/屏幕供电异常",
+            "severity": "warning",
+            "description": "DCP显示控制器固件异常，涉及屏幕或屏幕供电。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.5},
+              {"name": "屏幕供电电路", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "检测屏幕供电电路",
+              "更换屏幕"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC-lomfb"],
+            "regex": "DCP PANIC.*lomfb"
+          },
+          "faultInfo": {
+            "title": "屏幕/屏幕听筒排线故障",
+            "severity": "warning",
+            "description": "DCP显示控制器lomfb模块异常。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.5},
+              {"name": "屏幕听筒排线", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换屏幕听筒排线",
+              "检测屏幕"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PREFETCH Abort"],
+            "regex": "DCP PREFETCH Abort"
+          },
+          "faultInfo": {
+            "title": "屏幕相关问题",
+            "severity": "warning",
+            "description": "DCP显示控制器预取异常。",
+            "affectedComponents": [
+              {"name": "屏幕排线", "probability": 0.5},
+              {"name": "屏幕供电", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "检测屏幕排线与供电",
+              "更换屏幕"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP NMI"],
+            "regex": "DCP NMI"
+          },
+          "faultInfo": {
+            "title": "屏幕/音频/硬盘故障",
+            "severity": "warning",
+            "description": "DCP不可屏蔽中断，涉及屏幕、音频模块或硬盘。",
+            "affectedComponents": [
+              {"name": "屏幕", "probability": 0.4},
+              {"name": "音频模块", "probability": 0.3},
+              {"name": "硬盘", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "排查屏幕、音频模块与硬盘"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP DATA ABORT"],
+            "regex": "DCP DATA ABORT"
+          },
+          "faultInfo": {
+            "title": "屏幕/听筒感光排线/听筒放大IC",
+            "severity": "warning",
+            "description": "DCP数据异常终止。",
+            "affectedComponents": [
+              {"name": "屏幕", "probability": 0.3},
+              {"name": "听筒感光排线", "probability": 0.4},
+              {"name": "听筒放大IC", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换听筒感光排线与放大IC"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Key hdr kind=NEW"],
+            "regex": "Key hdr kind.*NEW"
+          },
+          "faultInfo": {
+            "title": "显示IC故障",
+            "severity": "critical",
+            "description": "显示控制器Key异常，显示IC故障。",
+            "affectedComponents": [
+              {"name": "显示IC", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "专业维修更换显示IC"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["apt firmware"],
+            "regex": "apt firmware"
+          },
+          "faultInfo": {
+            "title": "国产屏导致重启",
+            "severity": "warning",
+            "description": "非原装屏幕（国产屏）固件不兼容导致系统重启。",
+            "affectedComponents": [
+              {"name": "国产屏幕", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装屏幕",
+              "检测显示驱动"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC"],
+            "regex": "DCP PANIC"
+          },
+          "faultInfo": {
+            "title": "感光排线故障",
+            "severity": "warning",
+            "description": "DCP显示控制器异常，感光排线故障。",
+            "affectedComponents": [
+              {"name": "前置感光排线", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换前置感光排线",
+              "检测感应功能"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC-ap_link", "ap_link"],
+            "regex": "DCP PANIC.*ap_link|ap_link"
+          },
+          "faultInfo": {
+            "title": "屏幕/显示协处理器通讯异常（iPhone 16系列专属）",
+            "severity": "warning",
+            "description": "DCP显示控制器ap_link异常，iPhone 16系列专属，涉及屏幕或显示协处理器通讯。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.6},
+              {"name": "显示排线", "probability": 0.2},
+              {"name": "显示协处理器", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "更换原装屏幕",
+              "检测显示排线与接口",
+              "排查显示协处理器"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC-set_run_mode_safe", "set_run_mode_safe"],
+            "regex": "set_run_mode_safe"
+          },
+          "faultInfo": {
+            "title": "硬盘虚焊/CPU虚焊/主板板层",
+            "severity": "critical",
+            "description": "DCP显示控制器进入安全运行模式，通常与硬盘虚焊、CPU虚焊或主板板层问题相关。",
+            "affectedComponents": [
+              {"name": "硬盘虚焊", "probability": 0.3},
+              {"name": "CPU虚焊", "probability": 0.4},
+              {"name": "主板板层", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "重植硬盘",
+              "重植CPU",
+              "检测主板板层"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["i2c3"],
+            "regex": "i2c3"
+          },
+          "faultInfo": {
+            "title": "屏幕/屏幕供电/屏幕座子",
+            "severity": "warning",
+            "description": "I2C总线3通讯异常，涉及屏幕、屏幕供电或屏幕座子。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.4},
+              {"name": "屏幕供电", "probability": 0.3},
+              {"name": "屏幕座子", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换屏幕",
+              "检测屏幕供电电路",
+              "检查屏幕座子连接"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["IOMFB", "int handler"],
+            "regex": "IOMFB.*int handler|IOMFB"
+          },
+          "faultInfo": {
+            "title": "屏幕/屏幕供电故障",
+            "severity": "warning",
+            "description": "IOMFB显示缓冲区中断处理异常，涉及屏幕或屏幕供电。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.6},
+              {"name": "屏幕供电", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换原装屏幕",
+              "检测屏幕供电电路"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "name": "充电与电源",
+      "nameEn": "Charging & Power",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["busy timeout"],
+            "regex": "busy timeout"
+          },
+          "faultInfo": {
+            "title": "充电IC故障",
+            "severity": "critical",
+            "description": "电源管理忙超时，充电IC故障。",
+            "affectedComponents": [
+              {"name": "充电IC", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换充电IC",
+              "检测充电电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Apple PMM", "Apple PMGR"],
+            "regex": "Apple PMM|Apple PMGR"
+          },
+          "faultInfo": {
+            "title": "充电IC/电池转换管问题",
+            "severity": "critical",
+            "description": "电源管理模块异常。",
+            "affectedComponents": [
+              {"name": "充电IC", "probability": 0.5},
+              {"name": "电池转换管", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换充电IC与电池转换管"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["PMP NMI"],
+            "regex": "PMP NMI"
+          },
+          "faultInfo": {
+            "title": "电池故障",
+            "severity": "warning",
+            "description": "电源管理处理器不可屏蔽中断，电池故障。",
+            "affectedComponents": [
+              {"name": "电池", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换原装电池",
+              "校准电池数据"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["PMP NMI FIQ"],
+            "regex": "PMP NMI FIQ"
+          },
+          "faultInfo": {
+            "title": "CPU供电电路虚焊/电源部分故障",
+            "severity": "critical",
+            "description": "电源管理处理器FIQ中断，CPU供电或电源部分故障。",
+            "affectedComponents": [
+              {"name": "CPU供电电路", "probability": 0.5},
+              {"name": "电源模块", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU供电电路",
+              "检测电源模块"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Kernel data abort"],
+            "regex": "Kernel data abort"
+          },
+          "faultInfo": {
+            "title": "充电IC/CPU供电/快充电路问题",
+            "severity": "critical",
+            "description": "内核数据异常终止，涉及充电IC、CPU供电或快充电路。",
+            "affectedComponents": [
+              {"name": "充电IC", "probability": 0.3},
+              {"name": "CPU供电", "probability": 0.3},
+              {"name": "快充电路", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "更换充电IC",
+              "检测CPU供电与快充电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Unexpected abort"],
+            "regex": "Unexpected abort"
+          },
+          "faultInfo": {
+            "title": "主电源故障",
+            "severity": "critical",
+            "description": "意外异常终止，主电源故障。",
+            "affectedComponents": [
+              {"name": "主电源芯片", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "检测主电源芯片",
+              "专业维修电源电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SOCD report detected", "AP watchdog expired"],
+            "regex": "SOCD report.*watchdog"
+          },
+          "faultInfo": {
+            "title": "充电电路/无线充电/供电电路故障",
+            "severity": "critical",
+            "description": "SOC看门狗超时报告，涉及充电、无线充电或供电电路。",
+            "affectedComponents": [
+              {"name": "充电电路", "probability": 0.3},
+              {"name": "无线充电模块", "probability": 0.3},
+              {"name": "供电电路", "probability": 0.4}
+            ],
+            "troubleshootingSteps": [
+              "检测充电电路与无线充电模块",
+              "更换供电元件"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SCL display PMU"],
+            "regex": "SCL display PMU"
+          },
+          "faultInfo": {
+            "title": "快充IC或CPU通讯问题",
+            "severity": "critical",
+            "description": "显示PMU的SCL总线异常，涉及快充IC或CPU通讯问题。",
+            "affectedComponents": [
+              {"name": "快充IC", "probability": 0.5},
+              {"name": "CPU通讯电路", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换快充IC",
+              "检测CPU通讯线路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cpu_board",
+      "name": "CPU/主板与核心硬件",
+      "nameEn": "CPU / Mainboard & Core Hardware",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["Apple SocHot", "AppleSocHot.hot"],
+            "regex": "Apple SocHot|AppleSocHot"
+          },
+          "faultInfo": {
+            "title": "CPU过热/上盖虚焊",
+            "severity": "critical",
+            "description": "CPU温度过高触发保护，或上盖虚焊导致散热异常。",
+            "affectedComponents": [
+              {"name": "CPU", "probability": 0.4},
+              {"name": "CPU上盖", "probability": 0.4},
+              {"name": "散热系统", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU上盖",
+              "检测散热与供电"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["A free zone element has been modified"],
+            "regex": "free zone element has been modified"
+          },
+          "faultInfo": {
+            "title": "CPU虚焊",
+            "severity": "critical",
+            "description": "内存区域被非法修改，CPU虚焊导致。",
+            "affectedComponents": [
+              {"name": "CPU", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU",
+              "检测供电电感"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AGXG1OP_BO_NM"],
+            "regex": "AGXG1OP"
+          },
+          "faultInfo": {
+            "title": "PCB板层故障",
+            "severity": "critical",
+            "description": "GPU/显示相关内核扩展异常，PCB板层故障。",
+            "affectedComponents": [
+              {"name": "PCB板层", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "检测主板板层",
+              "修复断线"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["CPU供电电感"],
+            "regex": "CPU.*供电.*电感"
+          },
+          "faultInfo": {
+            "title": "CPU供电电感故障",
+            "severity": "critical",
+            "description": "CPU供电电感损坏或虚焊。",
+            "affectedComponents": [
+              {"name": "CPU供电电感", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "更换CPU供电电感",
+              "检测供电电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["forcibly halt CPU", "faild to halt with error"],
+            "regex": "forcibly halt CPU|faild to halt with error"
+          },
+          "faultInfo": {
+            "title": "CPU虚焊",
+            "severity": "critical",
+            "description": "CPU强制停止或无法正常停机，通常是CPU虚焊导致。",
+            "affectedComponents": [
+              {"name": "CPU", "probability": 0.9}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU",
+              "检测CPU供电稳定性"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["SEP memory"],
+            "regex": "SEP memory"
+          },
+          "faultInfo": {
+            "title": "主板板层/中层掉点虚焊/搬板",
+            "severity": "critical",
+            "description": "SEP安全协处理器内存异常，通常与主板板层、中层掉点虚焊或搬板有关。",
+            "affectedComponents": [
+              {"name": "主板板层", "probability": 0.4},
+              {"name": "中层掉点虚焊", "probability": 0.4},
+              {"name": "搬板", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "检测主板板层",
+              "检查中层掉点虚焊",
+              "必要时搬板"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor",
+      "name": "传感器与外设",
+      "nameEn": "Sensors & Peripherals",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["Prs0"],
+            "regex": "Prs0"
+          },
+          "faultInfo": {
+            "title": "尾排/气压计故障",
+            "severity": "warning",
+            "description": "压力传感器异常，涉及尾排或气压计。iPhone 11系列额外关联尾排/音量排线。",
+            "affectedComponents": [
+              {"name": "尾排", "probability": 0.5},
+              {"name": "气压计", "probability": 0.3},
+              {"name": "音量排线", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "更换尾排",
+              "检测气压计功能",
+              "iPhone 11系列额外检查音量排线"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["AppleTriStar2"],
+            "regex": "AppleTriStar2"
+          },
+          "faultInfo": {
+            "title": "尾插或尾插座子故障",
+            "severity": "warning",
+            "description": "Apple TriStar 2芯片无法找到系统ID，通常与尾插或尾插座子故障相关。",
+            "affectedComponents": [
+              {"name": "尾插", "probability": 0.5},
+              {"name": "尾插座子", "probability": 0.5}
+            ],
+            "troubleshootingSteps": [
+              "更换尾插",
+              "检查尾插座子连接",
+              "检测TriStar芯片"
+            ],
+            "priority": "建议先排查外部配件"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Initpoc exited", "Bod tailq elm", "Prev-next"],
+            "regex": "Initpoc exited|Bod tailq elm|Prev-next|Pre-next"
+          },
+          "faultInfo": {
+            "title": "主晶振故障",
+            "severity": "critical",
+            "description": "主时钟晶振异常，可能导致系统时钟不稳定而重启。",
+            "affectedComponents": [
+              {"name": "主时钟晶振", "probability": 0.7},
+              {"name": "24M时钟晶体", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "更换主时钟晶振",
+              "检测24M时钟晶体",
+              "检查晶振供电电路"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sleep_wake",
+      "name": "休眠与唤醒",
+      "nameEn": "Sleep & Wake",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["Sleep/wake hang detected"],
+            "regex": "Sleep.*wake hang|Sleep/wake hang"
+          },
+          "faultInfo": {
+            "title": "音频电路/CPU供电/电池故障",
+            "severity": "critical",
+            "description": "设备在休眠或唤醒过程中挂起，涉及音频电路、CPU供电或电池异常。",
+            "affectedComponents": [
+              {"name": "音频电路", "probability": 0.3},
+              {"name": "CPU供电", "probability": 0.4},
+              {"name": "电池", "probability": 0.3}
+            ],
+            "troubleshootingSteps": [
+              "排查音频电路连接",
+              "检测CPU供电稳定性",
+              "更换原装电池"
+            ],
+            "priority": "建议专业维修主板"
+          }
+        }
+      ]
+    },
+    {
+      "id": "system_termination",
+      "name": "系统级终止（非硬件类）",
+      "nameEn": "System-level Terminations (Non-hardware)",
+      "description": "以下代码属于iOS系统主动终止，通常非硬件损坏。维修工程师应先排除软件因素再拆机。",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["0x8badf00d", "8badf00d"],
+            "regex": "0x8badf00d|8badf00d"
+          },
+          "faultInfo": {
+            "title": "Watchdog超时（应用未响应被系统杀掉）",
+            "severity": "info",
+            "description": "'ate bad food' —— 应用启动/关闭/生命周期回调超时未响应，被系统Watchdog杀掉。绝大多数情况为软件问题，非硬件故障。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 0.9},
+              {"name": "系统资源（如同时硬件资源紧张）", "probability": 0.1}
+            ],
+            "troubleshootingSteps": [
+              "先确认崩溃是否发生在特定App，让用户重装/更新该App",
+              "如所有App普遍报此错误，检查系统版本或考虑刷机",
+              "极少数情况可能是硬盘I/O过慢导致，配合其他日志综合判断",
+              "无需拆机维修"
+            ],
+            "priority": "先排查软件问题，非硬件故障",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0xc00010ff", "c00010ff"],
+            "regex": "0xc00010ff|c00010ff"
+          },
+          "faultInfo": {
+            "title": "Thermal热关机（过热保护）",
+            "severity": "warning",
+            "description": "'cool off' —— 设备温度过高触发系统保护性关机。非硬件损坏，但需排查散热与电池状况。",
+            "affectedComponents": [
+              {"name": "电池老化/膨胀", "probability": 0.4},
+              {"name": "CPU/主板散热", "probability": 0.3},
+              {"name": "环境温度/使用场景", "probability": 0.2},
+              {"name": "后台高负载应用", "probability": 0.1}
+            ],
+            "troubleshootingSteps": [
+              "检测电池健康度，老化电池发热明显",
+              "拆机检查CPU石墨散热片是否脱落",
+              "询问用户使用场景（充电+游戏/高温环境）",
+              "清理后台高负载应用"
+            ],
+            "priority": "先排查电池与散热",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0xdead10cc", "dead10cc"],
+            "regex": "0xdead10cc|dead10cc"
+          },
+          "faultInfo": {
+            "title": "文件描述符访问违规（后台任务未释放资源）",
+            "severity": "info",
+            "description": "'dead lock' —— 应用后台运行时持有系统资源未释放。纯软件问题，无需硬件维修。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "定位崩溃App，让用户更新到最新版本",
+              "无需硬件维修"
+            ],
+            "priority": "非硬件故障",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["0xdeadfa11", "deadfa11"],
+            "regex": "0xdeadfa11|deadfa11"
+          },
+          "faultInfo": {
+            "title": "用户强制退出",
+            "severity": "info",
+            "description": "'dead fall' —— 用户长按电源键+Home键强制关机时的记录。非故障。",
+            "affectedComponents": [
+              {"name": "用户主动操作", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "确认是否为用户手动强关",
+              "若频繁发生，询问用户是因卡死/无响应而被迫强关，此时需进一步排查"
+            ],
+            "priority": "非故障，用户操作记录",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["EXC_RESOURCE", "MEMORY", "WAKEUPS", "CPU_MONITOR"],
+            "regex": "EXC_RESOURCE.*(MEMORY|WAKEUPS|CPU)"
+          },
+          "faultInfo": {
+            "title": "应用资源超限（软件问题）",
+            "severity": "info",
+            "description": "应用CPU时间/内存/唤醒次数超出iOS配额被终止。属于软件层问题，非硬件故障。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "确认是特定App问题，让用户更新或反馈开发者",
+              "若无差别所有App报此错，可能内存严重不足，检查存储与Jetsam日志",
+              "无需硬件维修"
+            ],
+            "priority": "非硬件故障",
+            "reference": "Apple Developer Documentation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "exception_dispatcher",
+      "name": "Exception Type 分诊",
+      "nameEn": "Exception Type Triage",
+      "description": "根据Exception Type初步判断软/硬件性质，帮助工程师快速分诊。",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["EXC_CRASH", "SIGABRT"],
+            "regex": "EXC_CRASH|SIGABRT"
+          },
+          "faultInfo": {
+            "title": "应用异常终止（99%为软件问题）",
+            "severity": "info",
+            "description": "应用触发异常或调用abort()自杀。除非同时伴随硬件相关面板，否则无需拆机。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 0.95},
+              {"name": "iOS系统组件", "probability": 0.05}
+            ],
+            "troubleshootingSteps": [
+              "结合Termination Reason字段综合判断",
+              "如无panic-full日志伴随，让用户重装或更新App",
+              "非硬件故障"
+            ],
+            "priority": "非硬件故障",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["EXC_BAD_ACCESS", "SIGSEGV", "SIGBUS"],
+            "regex": "EXC_BAD_ACCESS|SIGSEGV|SIGBUS"
+          },
+          "faultInfo": {
+            "title": "非法内存访问（大概率软件Bug）",
+            "severity": "info",
+            "description": "野指针/越界访问/访问已释放对象。绝大多数为软件问题，极少数情况伴随存储器损坏。",
+            "affectedComponents": [
+              {"name": "应用软件Bug", "probability": 0.9},
+              {"name": "内存/存储器损坏", "probability": 0.1}
+            ],
+            "troubleshootingSteps": [
+              "确认是否单一App持续崩溃",
+              "如多App频繁触发，配合Jetsam/eMemory日志判断硬盘/内存问题",
+              "多数无需硬件维修"
+            ],
+            "priority": "先排查软件，异常频发再检测硬盘/内存",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["EXC_BREAKPOINT", "SIGTRAP"],
+            "regex": "EXC_BREAKPOINT|SIGTRAP"
+          },
+          "faultInfo": {
+            "title": "断言失败/断点异常（软件问题）",
+            "severity": "info",
+            "description": "开发者主动触发的断言或调试陷阱。纯软件问题。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "让用户更新App或反馈开发者",
+              "非硬件故障"
+            ],
+            "priority": "非硬件故障",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["EXC_GUARD"],
+            "regex": "EXC_GUARD"
+          },
+          "faultInfo": {
+            "title": "文件描述符/沙盒访问违规（软件问题）",
+            "severity": "info",
+            "description": "应用违规访问文件描述符或沙盒外资源。纯软件问题。",
+            "affectedComponents": [
+              {"name": "应用软件", "probability": 1.0}
+            ],
+            "troubleshootingSteps": [
+              "让用户更新App",
+              "非硬件故障"
+            ],
+            "priority": "非硬件故障",
+            "reference": "Apple TN2151"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kernel_panic_types",
+      "name": "内核崩溃（panic-full）主类型速判",
+      "nameEn": "Kernel Panic Type Dispatcher",
+      "description": "根据panicString首关键字快速定位panic大类别，配合具体术语库精确定位组件。",
+      "entries": [
+        {
+          "matchPattern": {
+            "keywords": ["DCP PANIC", "AppleDCPDPTXPowerController", "AppleDCPAV"],
+            "regex": "DCP\\s+PANIC|AppleDCP"
+          },
+          "faultInfo": {
+            "title": "显示协处理器故障（DCP大类）",
+            "severity": "critical",
+            "description": "Display Co-Processor崩溃。A14及以上机型专属，负责显示子系统的独立协处理器。纪年手册中DCP细分为多种类型，请参照具体子条目定位。",
+            "affectedComponents": [
+              {"name": "屏幕总成", "probability": 0.35},
+              {"name": "屏幕排线/听筒感光排线", "probability": 0.25},
+              {"name": "显示IC", "probability": 0.2},
+              {"name": "主板DCP驱动电路", "probability": 0.2}
+            ],
+            "troubleshootingSteps": [
+              "先排查屏幕排线与总成（非拆机可先做的）",
+              "使用测试屏验证是否为屏幕本身故障",
+              "如仍复现，检测主板显示供电与DCP相关电路"
+            ],
+            "priority": "建议先排查外部配件",
+            "reference": "Apple Developer Forums (Kernel Panic)"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["Kernel Watchdog", "WDT Timeout", "watchdog timeout"],
+            "regex": "Kernel\\s+Watchdog|WDT\\s+Timeout|watchdog\\s+timeout"
+          },
+          "faultInfo": {
+            "title": "看门狗超时（系统级无响应）",
+            "severity": "critical",
+            "description": "内核看门狗超时，系统无响应。可能由CPU虚焊、供电异常、硬盘I/O卡死引起。",
+            "affectedComponents": [
+              {"name": "CPU虚焊", "probability": 0.35},
+              {"name": "CPU供电", "probability": 0.3},
+              {"name": "硬盘I/O", "probability": 0.2},
+              {"name": "系统固件", "probability": 0.15}
+            ],
+            "troubleshootingSteps": [
+              "尝试刷机排除固件问题",
+              "如复现，检测CPU供电电感",
+              "重植CPU",
+              "检测硬盘健康度"
+            ],
+            "priority": "先刷机再考虑硬件维修",
+            "reference": "Apple TN2151"
+          }
+        },
+        {
+          "matchPattern": {
+            "keywords": ["CPU CATERR", "catastrophic"],
+            "regex": "CPU\\s+CATERR|catastrophic"
+          },
+          "faultInfo": {
+            "title": "CPU灾难性错误",
+            "severity": "critical",
+            "description": "CPU发生不可恢复的硬件错误。通常需要重植或更换CPU。",
+            "affectedComponents": [
+              {"name": "CPU", "probability": 0.7},
+              {"name": "CPU供电", "probability": 0.2},
+              {"name": "主板板层", "probability": 0.1}
+            ],
+            "troubleshootingSteps": [
+              "重植CPU（BGA返修）",
+              "检测CPU供电电感",
+              "严重时更换CPU"
+            ],
+            "priority": "建议专业维修主板",
+            "reference": "Apple Developer Forums (Kernel Panic)"
+          }
+        }
+      ]
+    }
+  ],
+  "deviceModelMap": {
+    "description": "Hardware Model 字段到市售型号的映射，用于自动识别机型并提示型号专属故障",
+    "iPhone8,1": "iPhone 6s",
+    "iPhone8,2": "iPhone 6s Plus",
+    "iPhone8,4": "iPhone SE (1st gen)",
+    "iPhone9,1": "iPhone 7",
+    "iPhone9,2": "iPhone 7 Plus",
+    "iPhone9,3": "iPhone 7",
+    "iPhone9,4": "iPhone 7 Plus",
+    "iPhone10,1": "iPhone 8",
+    "iPhone10,2": "iPhone 8 Plus",
+    "iPhone10,3": "iPhone X",
+    "iPhone10,4": "iPhone 8",
+    "iPhone10,5": "iPhone 8 Plus",
+    "iPhone10,6": "iPhone X",
+    "iPhone11,2": "iPhone XS",
+    "iPhone11,4": "iPhone XS Max",
+    "iPhone11,6": "iPhone XS Max",
+    "iPhone11,8": "iPhone XR",
+    "iPhone12,1": "iPhone 11",
+    "iPhone12,3": "iPhone 11 Pro",
+    "iPhone12,5": "iPhone 11 Pro Max",
+    "iPhone12,8": "iPhone SE (2nd gen)",
+    "iPhone13,1": "iPhone 12 mini",
+    "iPhone13,2": "iPhone 12",
+    "iPhone13,3": "iPhone 12 Pro",
+    "iPhone13,4": "iPhone 12 Pro Max",
+    "iPhone14,2": "iPhone 13 Pro",
+    "iPhone14,3": "iPhone 13 Pro Max",
+    "iPhone14,4": "iPhone 13 mini",
+    "iPhone14,5": "iPhone 13",
+    "iPhone14,6": "iPhone SE (3rd gen)",
+    "iPhone14,7": "iPhone 14",
+    "iPhone14,8": "iPhone 14 Plus",
+    "iPhone15,2": "iPhone 14 Pro",
+    "iPhone15,3": "iPhone 14 Pro Max",
+    "iPhone15,4": "iPhone 15",
+    "iPhone15,5": "iPhone 15 Plus",
+    "iPhone16,1": "iPhone 15 Pro",
+    "iPhone16,2": "iPhone 15 Pro Max",
+    "iPhone17,1": "iPhone 16 Pro",
+    "iPhone17,2": "iPhone 16 Pro Max",
+    "iPhone17,3": "iPhone 16",
+    "iPhone17,4": "iPhone 16 Plus"
+  },
+  "bugTypeMap": {
+    "description": "bug_type 代码 → 日志类型，用于识别报告类型并选择解析器",
+    "109": {
+      "type": "Application Crash",
+      "typeCN": "应用崩溃",
+      "handler": "常规崩溃解析器",
+      "hardwareRelated": "极少"
+    },
+    "210": {
+      "type": "Kernel Panic",
+      "typeCN": "内核崩溃",
+      "handler": "panic-full解析器",
+      "hardwareRelated": "高（硬件故障主要来源）"
+    },
+    "198": {
+      "type": "JetsamEvent",
+      "typeCN": "内存压力事件",
+      "handler": "Jetsam解析器",
+      "hardwareRelated": "低（多为软件问题，偶见内存条故障）"
+    },
+    "145": {
+      "type": "ResetCounter",
+      "typeCN": "异常重启计数",
+      "handler": "重启计数解析器",
+      "hardwareRelated": "辅助判断"
+    },
+    "288": {
+      "type": "CPU Resource Exception",
+      "typeCN": "CPU资源超限",
+      "handler": "资源异常解析器",
+      "hardwareRelated": "无（软件问题）"
+    },
+    "309": {
+      "type": "PowerLog",
+      "typeCN": "电源日志",
+      "handler": "电源日志解析器",
+      "hardwareRelated": "辅助判断"
+    }
+  },
+  "logStoragePathMap": {
+    "description": "iOS各版本日志存储路径，用于教工程师如何采集日志",
+    "iOS 16 及以前": "/var/mobile/Library/Logs/CrashReporter/",
+    "iOS 17+": "/private/var/containers/Shared/SystemGroup/systemgroup.com.apple.osanalytics/DiagnosticsReports/",
+    "用户可见路径": "设置 → 隐私 → 分析与改进 → 分析数据"
+  }
+}
